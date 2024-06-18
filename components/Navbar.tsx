@@ -3,10 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { usePathname } from 'next/navigation'
+
 
 export default function Navbar() {
     const [scroll, setScroll] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const pathname = usePathname()
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,14 +34,14 @@ export default function Navbar() {
 
     return (
         <div className='fixed top-0 left-0 right-0 z-50'>
-            <div className={`flex flex-row py-6 px-10 justify-between items-center ${scroll ? 'bg-white text-black' : 'text-white'}`}>
-                <Link href="/" className='flex flex-row gap-4 text-xl items-center'>
+            <div className={`flex flex-row py-6 px-10 justify-between font-medium items-center ${pathname === '/market' ? `${scroll ? 'bg-white text-black' : 'text-black'}` : `${scroll ? 'bg-white text-black' : 'text-black'}`}`}>
+                <Link href="/" className='flex flex-row gap-4 text-2xl items-center'>
                     <div className='relative w-8 h-8'>
-                        <Image src={`${scroll ? '/logo_black.png' : '/logo.png'}`} alt='logo' fill />
+                        <Image src={`${scroll ? '/images/logo.png' : '/images/logo.png'}`} alt='logo' fill />
                     </div>
                     Interweave
                 </Link>
-                <div className='hidden lg:flex flex-row items-center text-lg gap-10'>
+                <div className='hidden lg:flex flex-row items-center text-xl gap-10'>
                     <Link href="https://github.com/Interweave" target='_blank'>
                         Github
                     </Link>

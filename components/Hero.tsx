@@ -22,8 +22,8 @@ export default function Hero() {
                 Build, connect, and monetize on a secure and transparent blockchain marketplace.
                 </div>
                 <div className='z-30 flex flex-col lg:flex-row gap-10 text-black'>
-                    <Link href="/dashboard" className='bg-white shadow-md shadow-white hover:bg-gray-200 transition-all text-center  rounded-xl px-10 py-3 text-xl lg:w-[12vw]'>
-                        DASHBOARD
+                    <Link href="/market" className='bg-white shadow-md shadow-white hover:bg-gray-200 transition-all text-center  rounded-xl px-10 py-3 text-xl lg:w-[12vw]'>
+                        MARKET
                     </Link>
 
                     <Link href="https://github.com/thedudeontitan/Interweave" target='_blank' className=''>
